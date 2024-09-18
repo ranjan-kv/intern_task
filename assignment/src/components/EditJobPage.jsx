@@ -22,7 +22,7 @@ const EditJobPage = () => {
   useEffect(() => {
     const fetchJobData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/${jobId}`);
+        const response = await axios.get(`https://intern-task-asud.onrender.com/api/${jobId}`);
         console.log(response.data);
         
        

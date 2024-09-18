@@ -15,7 +15,7 @@ const ViewJobSheet = () => {
     const fetchJobData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:5000/api/${id}`);
+        const response = await axios.get(`https://intern-task-asud.onrender.com/api/${id}`);
         setJobData(response.data);
       } catch (error) {
         setError("Error fetching job sheet: " + error.message);
@@ -29,7 +29,7 @@ const ViewJobSheet = () => {
   const handleSaveNote = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:5000/api/${id}`, { note });
+      await axios.patch(`https://intern-task-asud.onrender.com/api/${id}`, { note });
       console.log('Note saved:', note);
     } catch (error) {
       setError("Error saving note: " + error.message);
@@ -116,7 +116,7 @@ const ViewJobSheet = () => {
               className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors"
               onClick={async () => {
                 try {
-                  await axios.delete(`http://localhost:5000/api/${id}`);
+                  await axios.delete(`https://intern-task-asud.onrender.com/api/${id}`);
                   navigate('/');
                 } catch (error) {
                   setError("Error deleting job sheet: " + error.message);

@@ -13,7 +13,7 @@ const HomePage = () => {
     const fetchJobSheets = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:5000/api");
+        const response = await axios.get("https://intern-task-asud.onrender.com/api");
         setJobSheets(response.data);
       } catch (error) {
         setError("Error fetching job sheets: " + error.message);
@@ -26,7 +26,7 @@ const HomePage = () => {
 
   const handleDelete = async (jobId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/${jobId}`);
+      await axios.delete(`https://intern-task-asud.onrender.com/api/${jobId}`);
       setJobSheets(jobSheets.filter(job => job._id !== jobId));
     } catch (error) {
       setError("Error deleting job sheet: " + error.message);
