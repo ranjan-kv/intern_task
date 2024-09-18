@@ -1,8 +1,6 @@
 
-GET https://intern-task-asud.onrender.com/api
+GET http://localhost:5000/api
 Content-Type: application/json
-
-
 
 POST https://intern-task-asud.onrender.com/api
 Content-Type: application/json

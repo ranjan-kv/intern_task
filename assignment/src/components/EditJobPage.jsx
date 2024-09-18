@@ -61,7 +61,7 @@ const EditJobPage = () => {
     }
 
     try {
-      await axios.put(`/api/${jobId}`, formDataToSubmit, {
+      await axios.put(`https://intern-task-asud.onrender.com/api/${jobId}`, formDataToSubmit, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -74,7 +74,7 @@ const EditJobPage = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/${jobId}`);
+      await axios.delete(`https://intern-task-asud.onrender.com/api/${jobId}`);
       navigate('/jobs'); 
     } catch (error) {
       console.error('Error deleting job:', error);
